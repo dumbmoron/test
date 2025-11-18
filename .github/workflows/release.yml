@@ -3,6 +3,9 @@ name: Test Release (not draft)
 on:
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   test-release:
     runs-on: ubuntu-latest
@@ -27,4 +30,4 @@ jobs:
             2.txt
             3.txt
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}
